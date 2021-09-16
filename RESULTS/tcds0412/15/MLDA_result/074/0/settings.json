@@ -1,0 +1,12 @@
+{
+  "modality_liklihoods": [
+    -13867.64425567392,
+    -13287.2144062266,
+    -938.6684055583072,
+    -4620.525240335548
+  ],
+  "num_iteration": 1000,
+  "num_modalities": 4,
+  "num_topics": 7,
+  "total_liklihood": -32714.052307794376
+}

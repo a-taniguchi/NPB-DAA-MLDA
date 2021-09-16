@@ -1,0 +1,503 @@
+Pre-training
+Done it
+1-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+5-th candy is chosen
+2-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+2-th candy is chosen
+3-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+6-th candy is chosen
+4-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+9-th candy is chosen
+5-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+4-th candy is chosen
+6-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+4-th candy is chosen
+7-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+5-th candy is chosen
+8-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+2-th candy is chosen
+9-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+3-th candy is chosen
+10-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+1-th candy is chosen
+11-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+8-th candy is chosen
+12-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+3-th candy is chosen
+13-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+4-th candy is chosen
+14-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+6-th candy is chosen
+15-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+1-th candy is chosen
+16-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+4-th candy is chosen
+17-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+0-th candy is chosen
+18-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+7-th candy is chosen
+19-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+6-th candy is chosen
+20-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+0-th candy is chosen
+21-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+2-th candy is chosen
+22-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+0-th candy is chosen
+23-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+3-th candy is chosen
+24-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+7-th candy is chosen
+25-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+1-th candy is chosen
+26-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+9-th candy is chosen
+27-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+9-th candy is chosen
+28-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+7-th candy is chosen
+29-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+2-th candy is chosen
+30-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+6-th candy is chosen
+31-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+6-th candy is chosen
+32-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+5-th candy is chosen
+33-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+9-th candy is chosen
+34-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+4-th candy is chosen
+35-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+5-th candy is chosen
+36-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+7-th candy is chosen
+37-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+2-th candy is chosen
+38-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+5-th candy is chosen
+39-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+7-th candy is chosen
+40-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+5-th candy is chosen
+41-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+1-th candy is chosen
+42-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+0-th candy is chosen
+43-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+3-th candy is chosen
+44-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+2-th candy is chosen
+45-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+3-th candy is chosen
+46-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+0-th candy is chosen
+47-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+3-th candy is chosen
+48-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+2-th candy is chosen
+49-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+2-th candy is chosen
+50-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+8-th candy is chosen
+51-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+0-th candy is chosen
+52-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+1-th candy is chosen
+53-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+8-th candy is chosen
+54-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+3-th candy is chosen
+55-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+4-th candy is chosen
+56-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+7-th candy is chosen
+57-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+6-th candy is chosen
+58-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+0-th candy is chosen
+59-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+4-th candy is chosen
+60-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+3-th candy is chosen
+61-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+5-th candy is chosen
+62-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+7-th candy is chosen
+63-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+3-th candy is chosen
+64-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+5-th candy is chosen
+65-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+3-th candy is chosen
+66-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+3-th candy is chosen
+67-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+7-th candy is chosen
+68-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+3-th candy is chosen
+69-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+4-th candy is chosen
+70-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+5-th candy is chosen
+71-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+5-th candy is chosen
+72-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+1-th candy is chosen
+73-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+3-th candy is chosen
+74-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+5-th candy is chosen
+75-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+6-th candy is chosen
+76-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+9-th candy is chosen
+77-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+8-th candy is chosen
+78-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+1-th candy is chosen
+79-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+3-th candy is chosen
+80-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+7-th candy is chosen
+81-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+0-th candy is chosen
+82-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+5-th candy is chosen
+83-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+5-th candy is chosen
+84-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+3-th candy is chosen
+85-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+3-th candy is chosen
+86-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+3-th candy is chosen
+87-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+2-th candy is chosen
+88-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+6-th candy is chosen
+89-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+1-th candy is chosen
+90-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+4-th candy is chosen
+91-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+4-th candy is chosen
+92-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+2-th candy is chosen
+93-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+4-th candy is chosen
+94-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+2-th candy is chosen
+95-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+6-th candy is chosen
+96-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+3-th candy is chosen
+97-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+0-th candy is chosen
+98-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+1-th candy is chosen
+99-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+1-th candy is chosen
+100-th inference
+sample candidate word seq
+word cue weight: 200
+Choose one set of plausible global parameters
+0-th candy is chosen
+saved parameters removed
