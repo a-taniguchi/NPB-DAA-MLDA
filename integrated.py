@@ -400,7 +400,7 @@ for i in range(train_iter):
     save_stateseq(saved_model[i])
     save_loglikelihood(saved_model[i])
     save_params_as_npz(i, saved_model[i])
-    save_loglikelihood(saved_model[i])
+    #save_loglikelihood(saved_model[i])
 
 print("saved parameters removed")
 shutil.rmtree("Saved")

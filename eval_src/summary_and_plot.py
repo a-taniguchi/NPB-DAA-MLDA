@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 import matplotlib.cm as cm
 from tqdm import trange, tqdm
-from sklearn.metrics import adjusted_rand_score, f1_score
+from sklearn.metrics import adjusted_rand_score, f1_score, normalized_mutual_info_score
 from argparse import ArgumentParser
 from util.config_parser import ConfigParser_with_eval
 import warnings
@@ -97,6 +97,9 @@ def _plot_discreate_sequence(true_data, title, sample_data, cmap=None, cmap2=Non
     plt.ylabel('Iteration')
     plt.xticks(())
 
+# added by akira
+def zigzag(seq):  return seq[::2], seq[1::2]
+
 #%%
 Path("figures").mkdir(exist_ok=True)
 Path("summary_files").mkdir(exist_ok=True)
@@ -136,9 +139,11 @@ print("train_iter",train_iter)
 letter_ARI = np.zeros(train_iter)
 letter_macro_f1_score = np.zeros(train_iter)
 letter_micro_f1_score = np.zeros(train_iter)
+letter_NMI = np.zeros(train_iter) # added by akira
 word_ARI = np.zeros(train_iter)
 word_macro_f1_score = np.zeros(train_iter)
 word_micro_f1_score = np.zeros(train_iter)
+word_NMI = np.zeros(train_iter) # added by akira
 
 #%%
 lcolors = ListedColormap([cm.tab20(float(i)/letter_num) for i in range(letter_num)])
@@ -167,20 +172,33 @@ for t in trange(train_iter):
     letter_ARI[t] = adjusted_rand_score(concat_l_l, concat_l_r[t])
     letter_macro_f1_score[t] = calc_f1_score(concat_l_l, concat_l_r[t], letter_num, average="macro")
     letter_micro_f1_score[t] = calc_f1_score(concat_l_l, concat_l_r[t], letter_num, average="micro")
+    letter_NMI[t] = normalized_mutual_info_score(concat_l_l, concat_l_r[t]) # added by akira
     word_ARI[t] = adjusted_rand_score(concat_w_l, concat_w_r[t])
     word_macro_f1_score[t] = calc_f1_score(concat_w_l, concat_w_r[t], word_num, average="macro")
     word_micro_f1_score[t] = calc_f1_score(concat_w_l, concat_w_r[t], word_num, average="micro")
+    word_NMI[t] = normalized_mutual_info_score(concat_w_l, concat_w_r[t]) # added by akira
 print("Done!")
 
 #%% plot ARIs.
-plt.clf()
-plt.title("Letter ARI")
-plt.plot(range(train_iter), letter_ARI, ".-")
+#plt.clf()
+#plt.title("Letter ARI")
+#plt.plot(range(train_iter), letter_ARI, ".-")
 
 #%%
-plt.title("Word ARI")
-plt.clf()
-plt.plot(range(train_iter), word_ARI, ".-")
+#plt.title("Word ARI")
+#plt.clf()
+#plt.plot(range(train_iter), word_ARI, ".-")
+
+# added by akira
+if ( len(log_likelihood) == 2*train_iter ): # yousosuu ga 200 no toki
+    print("len:log_likelihood",len(log_likelihood))
+    log_likelihood_zig,log_likelihood_zag = zigzag(log_likelihood)
+    np.savetxt("summary_files/log_likelihood.txt",log_likelihood_zig)
+    log_likelihood = log_likelihood_zig
+elif ( len(log_likelihood) == train_iter+1 ): # yousosu ga 101 no toki
+    print("len:log_likelihood",len(log_likelihood))
+    log_likelihood = np.delete(log_likelihood,0)
+#####
 
 #%%
 plt.clf()
@@ -198,8 +216,11 @@ plt.savefig("figures/Log_likelihood.png")
 np.savetxt("summary_files/Letter_ARI.txt", letter_ARI)
 np.savetxt("summary_files/Letter_macro_F1_score.txt", letter_macro_f1_score)
 np.savetxt("summary_files/Letter_micro_F1_score.txt", letter_micro_f1_score)
+np.savetxt("summary_files/Letter_NMI.txt", letter_NMI) # added by akira
 np.savetxt("summary_files/Word_ARI.txt", word_ARI)
 np.savetxt("summary_files/Word_macro_F1_score.txt", word_macro_f1_score)
 np.savetxt("summary_files/Word_micro_F1_score.txt", word_micro_f1_score)
+np.savetxt("summary_files/Word_NMI.txt", word_NMI) # added by akira
+
 #with open("summary_files/Sum_of_resample_times.txt", "w") as f:
 #    f.write(str(np.sum(resample_times)))

@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# add original
+akira*
+RESULTS/
+results/
+sample_results/
+summary_files/
+figures/
