@@ -13,7 +13,7 @@ args = sys.argv # recive commadn line
 
 target   = args[1] #"./RESULTS/" + args[1]  # "./MLDA_test_dir/1209_npbdaa/" # path of target dir
 save_dir = "./RESULTS/figures/" # "./MLDA_test_dir/comparative_ex/tcds_1/" # path of save dir
-trial = 20  # num of trial
+trial = 10  # num of trial
 iter = 100  # num of training iteration
 weight_list = []
 
@@ -255,7 +255,8 @@ def print_ACC():
     std_ACC  = np.array(ACC).std()
 
     # Print terminal
-    print("ACC:",mean_ACC,std_ACC)
+    #print("ACC:",mean_ACC,std_ACC)
+    print(f"ACC: {mean_ACC:.3f} \pm {std_ACC:.3f}")
 
 # added by akira
 def calc_last_category_ARI():
@@ -293,10 +294,10 @@ def calc_last_category_ARI():
     std_NMI  = np.array(obj_NMI).std()
 
     # Print terminal
-    print(target)
-    print("ARI:",mean_ARI,std_ARI)
-    print("NMI:",mean_NMI,std_NMI)
-
+    #print(target)
+    print(f"NMI: {mean_NMI:.3f} \pm {std_NMI:.3f}")
+    print(f"ARI: {mean_ARI:.3f} \pm {std_ARI:.3f}")
+    
     # Write txt file
     #ARI = [mean_ARI,std_ARI]
     #NMI = [mean_NMI,std_NMI]
@@ -308,5 +309,6 @@ def calc_last_category_ARI():
 # plot_last_ACC_npbdaa_base()
 # plot_last_ACC_MLDA_base()
 # proposed_based_comp_last_ACC()
-calc_last_category_ARI()
-print_ACC()
+print_ACC() # added by akira
+calc_last_category_ARI() # added by akira
+
