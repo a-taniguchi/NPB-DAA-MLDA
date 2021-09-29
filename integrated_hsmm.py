@@ -32,9 +32,9 @@ obj_idxes = [i for (i, v) in enumerate(utr_num) for _ in range(v)]        #utter
 K = 7       #num of categories for MLDA
 N = len(utr_num)    #num of objects
 L = 10      #num of candidate word sequences
-S = 0      #num of utterance
-for n in utr_num:
-    S += n
+S = sum(utr_num) #0      #num of utterance
+#for n in utr_num:
+#    S += n
 word_weight_setting = "const"		# setting: "const" or "vary", value: "const"=200 "vary"=0~200, you can change values in word_weight_set()
 
 def load_config(filename):
@@ -200,6 +200,7 @@ parser.add_argument("--pyhlm", default=hypparams_pyhlm, help="hyper parameters o
 parser.add_argument("--word_length", default=hypparams_word_length, help="hyper parameters of word length")
 parser.add_argument("--superstate", default=hypparams_superstate, help="hyper parameters of superstate")
 parser.add_argument("--cont", default=0, help="iteration of previous trial")
+parser.add_argument("--cand", default=0, help="num of candidate word sequences") # added by akira
 args = parser.parse_args()
 hypparams_model = args.model
 hypparams_letter_duration = args.letter_duration

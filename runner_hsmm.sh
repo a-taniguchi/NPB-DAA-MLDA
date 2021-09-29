@@ -46,6 +46,8 @@ do
   rm -rf cand_results/*
   rm -rf MLDA_result/*
   rm -rf sampled_z_lnsj/*
+  rm -rf model/*
+  rm log.txt
 
   cat <<EOF >continue.sh
   #!/bin/bash"
@@ -60,10 +62,10 @@ EOF
 
   if "${CONTINUE}" ; then
     echo "bash runner.sh -l ${label} -b ${i} -e ${end} -p \${pre}" >>continue.sh
-    python3 integrated_hsmm.py --cont ${pre} | tee log.txt
+    python3 integrated_hsmm.py --cont ${pre} --cand ${cand} | tee log.txt
   else
     echo "bash runner.sh -l ${label} -b ${i} -e ${end}" >>continue.sh
-    python3 integrated_hsmm.py | tee log.txt
+    python3 integrated_hsmm.py --cand ${cand} | tee log.txt
   fi
 
   mkdir -p RESULTS/${label}/${i_str}/
@@ -77,6 +79,7 @@ EOF
   cp -r MLDA_result/ RESULTS/${label}/${i_str}/
   cp -r word_hist_result/ RESULTS/${label}/${i_str}/
   cp -r sampled_z_lnsj/ RESULTS/${label}/${i_str}/
+  cp -r model/ RESULTS/${label}/${i_str}/
 
   CONTINUE=false
 done
@@ -91,3 +94,5 @@ rm -rf sampled_z_lnsj/*
 rm -rf MLDA_result/*
 rm -rf word_hist_result/*
 rm -rf mlda_data/word_hist_candies/*
+rm -rf model/*
+rm log.txt
