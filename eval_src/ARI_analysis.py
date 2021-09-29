@@ -5,7 +5,8 @@ import numpy as np
 import argparse
 
 default_tar = "./RESULTS/1209_npbdaa/"  # path of target result
-trial = 10  # num of trial
+trial = 20  # num of trial
+print("trial",trial)
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-t",default=default_tar)

@@ -13,8 +13,9 @@ args = sys.argv # recive commadn line
 
 target   = args[1] #"./RESULTS/" + args[1]  # "./MLDA_test_dir/1209_npbdaa/" # path of target dir
 save_dir = "./RESULTS/figures/" # "./MLDA_test_dir/comparative_ex/tcds_1/" # path of save dir
-trial = 10  # num of trial
+trial = 20  # num of trial
 iter = 100  # num of training iteration
+print("trial",trial)
 weight_list = []
 
 Path(target).mkdir(exist_ok=True)
@@ -64,8 +65,8 @@ def plot_weight_sorted_cat_trans_ACC():
                     overall_ACC[i][j] = float(f.readline())
         plt.errorbar(range(iter+1), overall_ACC.mean(axis=0), yerr=overall_ACC.std(axis=0), label=weight, color=cm.jet(s/len(weight_list)),alpha=0.5)
         if weight <= 200:
-            np.savetxt(f"{target}csv_files/{weight}_cat_mean_ACC.csv", overall_ACC.mean(axis=0)[0:10], delimiter=',', fmt="%.3f")
-            np.savetxt(f"{target}csv_files/{weight}_cat_std_ACC.csv", overall_ACC.std(axis=0)[0:10], delimiter=',', fmt="%.3f")
+            np.savetxt(f"{target}csv_files/{weight}_cat_mean_ACC.csv", overall_ACC.mean(axis=0)[:], delimiter=',', fmt="%.3f")
+            np.savetxt(f"{target}csv_files/{weight}_cat_std_ACC.csv", overall_ACC.std(axis=0)[:], delimiter=',', fmt="%.3f")
     # plt.errorbar(range(iter), ground_truth_ACC, label="Ground truth", color="gray")
     plt.xlabel("Iteration of word acquisition")
     plt.ylabel("Categorization ACC")

@@ -32,10 +32,10 @@ obj_idxes = [i for (i, v) in enumerate(utr_num) for _ in range(v)]        #utter
 K = 7       #num of categories for MLDA
 N = len(utr_num)    #num of objects
 L = 10      #num of candidate word sequences
-S = 0      #num of utterance
-for n in utr_num:
-    S += n
-word_weight_setting = "const"		# setting: "const" or "vary", value: "const"=200 "vary"=0~200, you can change values in word_weight_set()
+S = sum(utr_num) #0      #num of utterance
+#for n in utr_num:
+#    S += n
+word_weight_setting = "vary"		# setting: "const" or "vary", value: "const"=200 "vary"=0~200, you can change values in word_weight_set()
 
 def load_config(filename):
     cp = ConfigParser_with_eval()
@@ -167,13 +167,20 @@ def save_resample_times(resample_time):
 
 ### setting weight value for word cue
 def word_weight_set(flag):
+    weight_tmp = 30+((iter+1-10)*10) # bugfix by akira
     if flag == "vary":
         if iter <= 10:
             word_weight = 0
-        elif iter >= 11 and word_weight <= 190:   # until weight value is 200
-            word_weight = 40+((iter-10)*10)
+        else:
+            word_weight = min( max(0, weight_tmp), 200 ) # akira
+        """
+        if iter <= 10:
+            word_weight = 0
+        elif ( (iter >= 11) and (weight_tmp <= 190) ):   # until weight value is 200
+            word_weight = 40+((iter-10)*10) #weight_tmp
         else:
             word_weight = 200
+        """
     elif flag == "const": word_weight = 200
     else:
         print("word weight setting invalid")
@@ -199,6 +206,7 @@ parser.add_argument("--pyhlm", default=hypparams_pyhlm, help="hyper parameters o
 parser.add_argument("--word_length", default=hypparams_word_length, help="hyper parameters of word length")
 parser.add_argument("--superstate", default=hypparams_superstate, help="hyper parameters of superstate")
 parser.add_argument("--cont", default=0, help="iteration of previous trial")
+parser.add_argument("--cand", default=0, help="num of candidate word sequences") # added by akira
 args = parser.parse_args()
 hypparams_model = args.model
 hypparams_letter_duration = args.letter_duration
@@ -208,6 +216,7 @@ hypparams_pyhlm = args.pyhlm
 hypparams_word_length = args.word_length
 hypparams_superstate = args.superstate
 cont = int(args.cont)
+L = int(args.cand) # added by akira
 #####
 #####
 Path("results").mkdir(exist_ok=True)
@@ -304,7 +313,7 @@ for iter in trange(cont, train_iter):
         for obj_idx, state in zip(obj_idxes, cand_models[l].states_list):
             hist[obj_idx] += np.histogram(state.stateseq_norep, bins=word_num, range=(0, word_num))[0]
         np.savetxt(f"./mlda_data/word_hist_candies/{l}-th_word_hist.txt", hist, fmt="%d", delimiter='\t')
-        p = Popen(["./mlda", "-learn", "-config", "lda_config.json", "-data0", f"./mlda_data/word_hist_candies/{l}-th_word_hist.txt", "-weight0", f"{word_weight}", "-save_dir", f"model/{l}"], stdout=devnull, stderr=devnull)       # conduct MLDA
+        p = Popen(["./mlda", "-learn", "-config", "./akira_torioki/lda_config_akira.json", "-data0", f"./mlda_data/word_hist_candies/{l}-th_word_hist.txt", "-weight0", f"{word_weight}", "-save_dir", f"model/{l}"], stdout=devnull, stderr=devnull)       # conduct MLDA
         r = p.wait()
         if r != 0:
             print(f"MLDA finished with return code {r}")
