@@ -79,7 +79,7 @@ EOF
   cp -r MLDA_result/ RESULTS/${label}/${i_str}/
   cp -r word_hist_result/ RESULTS/${label}/${i_str}/
   cp -r sampled_z_lnsj/ RESULTS/${label}/${i_str}/
-  cp -r model/ RESULTS/${label}/${i_str}/
+  # cp -r model/ RESULTS/${label}/${i_str}/
 
   CONTINUE=false
 done

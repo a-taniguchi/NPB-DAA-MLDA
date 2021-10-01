@@ -6,4 +6,4 @@
       "p" ) pre="${OPTARG}" ;;
     esac
   done
-bash runner.sh -l nakatomo2_0_40_200 -b 20 -e 20
+bash runner.sh -l hsmm0930 -b 20 -e 20
