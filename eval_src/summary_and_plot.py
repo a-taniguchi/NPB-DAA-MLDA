@@ -123,7 +123,7 @@ concat_w_l = np.concatenate(w_labels, axis=0)
 l_results = get_results_of_letter(names, length)
 print("l_results", l_results[0])
 w_results = get_results_of_word(names, length)
-d_results = get_results_of_duration(names, length)
+# d_results = get_results_of_duration(names, length)
 
 concat_l_r = np.concatenate(l_results, axis=1)
 concat_w_r = np.concatenate(w_results, axis=1)

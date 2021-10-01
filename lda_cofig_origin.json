@@ -1,0 +1,26 @@
+{
+    "num_modal": 4,
+    "num_samiter": 1000,
+    "num_cat": 7,
+    "data0": "./mlda_data/truth_word_hist.txt",
+    "data1": "./mlda_data/vision_hist.txt",
+    "data2": "./mlda_data/audio_hist.txt",
+    "data3": "./mlda_data/tactile_hist.txt",
+    "dim0": 50,
+    "dim1": 500,
+    "dim2": 50,
+    "dim3": 15,
+    "weight0": 200,
+    "weight1": 280,
+    "weight2": 340,
+    "weight3": 160,
+    "category": "Category.txt",
+
+    "#######": "学習で利用",
+    "save_dir": "model",
+    "num_trial": 1,
+    "samp_method":  "gibbs",
+
+    "#######": "認識で利用",
+    "load_dir": "model2"
+}

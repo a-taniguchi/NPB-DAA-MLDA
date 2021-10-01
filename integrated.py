@@ -320,7 +320,7 @@ for iter in trange(cont, train_iter):
         for obj_idx, state in zip(obj_idxes, cand_models[l].states_list):
             hist[obj_idx] += np.histogram(state.stateseq_norep, bins=word_num, range=(0, word_num))[0]
         np.savetxt(f"./mlda_data/word_hist_candies/{l}-th_word_hist.txt", hist, fmt="%d", delimiter='\t')
-        p = Popen(["./mlda", "-learn", "-config", "./akira_torioki/lda_config_akira.json", "-data0", f"./mlda_data/word_hist_candies/{l}-th_word_hist.txt", "-weight0", f"{word_weight}", "-save_dir", f"model/{l}"], stdout=devnull, stderr=devnull)       # conduct MLDA
+        p = Popen(["./mlda", "-learn", "-config", "./lda_config_origin.json", "-data0", f"./mlda_data/word_hist_candies/{l}-th_word_hist.txt", "-weight0", f"{word_weight}", "-save_dir", f"model/{l}"], stdout=devnull, stderr=devnull)       # conduct MLDA
         r = p.wait()
         if r != 0:
             print(f"MLDA finished with return code {r}")
@@ -357,6 +357,7 @@ for iter in trange(cont, train_iter):
         pickle.dump(z_lnsj, file)
 
     weight_l = np.zeros(L)
+    weight_l_log = np.ones(L)
     for l in range(L):
         weights = np.zeros(S)       #weight of utterance s-th utterance
         for ns_idx in range(S):
