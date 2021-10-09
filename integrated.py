@@ -36,6 +36,8 @@ S = sum(utr_num) #0      #num of utterance
 #for n in utr_num:
 #    S += n
 word_weight_setting = "vary"		# setting: "const" or "vary", value: "const"=200 "vary"=0~200, you can change values in word_weight_set()
+select_sample_max = "sample"        # setting: "sample" or "argmax"
+sampling_criteria = "log"           # setting: "ur": unigram rescaling (proposed), "log": log scale, "mi": mutual info
 
 def load_config(filename):
     cp = ConfigParser_with_eval()
@@ -194,6 +196,11 @@ def word_weight_set(flag):
         exit(0)
     return word_weight
 
+def min_max(x, axis=None):
+    x_min = x.min(axis=axis, keepdims=True)
+    x_max = x.max(axis=axis, keepdims=True)
+    return (x - x_min) / (x_max - x_min)
+
 #%% parse arguments
 #####
 hypparams_model = "hypparams/model.config"
@@ -349,7 +356,10 @@ for iter in trange(cont, train_iter):
             for j in range(len_of_lns):
                 Pz_lnsj = mlda_phi[l][:, cand_models[l].states_list[ns_idx].stateseq_norep[j]] * mlda_theta[l][n, :]
                 Pz_lnsj /= Pz_lnsj.sum()
-                sampled_z = np.random.choice(K, p=Pz_lnsj)
+                if ( select_sample_max == "argmax" ):
+                    sampled_z = np.argmax(Pz_lnsj) # akira # np.random.choice(K, p=Pz_lnsj)
+                elif ( select_sample_max == "sample" ):
+                    sampled_z = np.random.choice(K, p=Pz_lnsj)
                 z_j.append(sampled_z)
             z_nsj.append(z_j)
         z_lnsj.append(z_nsj)
@@ -380,8 +390,15 @@ for iter in trange(cont, train_iter):
     if (weight_l.sum() == 0):
         print("ERROR: cannot zero divide", weight_l)
         print(weight_l_log)
+    # sampling_criteria = "log"           # setting: "ur": unigram rescaling (proposed), "log": log scale, "mi": mutual info
+    if ( sampling_criteria == "log" ):
+        weight_l = min_max(weight_l_log)
     weight_l /= weight_l.sum()      #normalization
-    choiced_idx = np.random.choice(L, p=weight_l)
+    if ( select_sample_max == "argmax" ):
+        choiced_idx = np.argmax(weight_l) # akira # np.random.choice(L, p=weight_l)
+    elif ( select_sample_max == "sample" ):
+        choiced_idx = np.random.choice(L, p=weight_l)
+    #choiced_idx = np.argmax(weight_l) # akira # np.random.choice(L, p=weight_l)
     resample_model_time = time.time() - st
 
     # Save the file of word sequence (candidates and chosen one) at an iteration
