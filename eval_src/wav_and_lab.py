@@ -1,4 +1,5 @@
 ### you can plot the result of word segmentation, ground truth label and its waveform in the same figure
+import sys
 import matplotlib.cm as cm
 import matplotlib.pyplot as plt
 import matplotlib as mpl
@@ -9,12 +10,14 @@ import struct
 from pathlib import Path
 from tqdm import trange, tqdm
 
+args = sys.argv # recive commadn line 
+
 global wav_target
 global data_target
 global result_target
 wav_target = "./cutted_mod/"    # path of wav files
 data_target = "./cutted_dataset/"   # path of MFCC's data files
-result_target = "./0128_real_200/wav_lab_figs/" # path of result files
+result_target = args[1]+"/20/"  #"./0128_real_200/wav_lab_figs/" # path of result files
 
 def _boundary(label):
     diff = np.diff(label)
@@ -83,7 +86,8 @@ def _plot_discreate_sequence(true_data, title, sample_data, wrd_idx, cmap=None, 
     if cmap2 is not None:
         cmap = cmap2
     ax.matshow(sample_data, extent=[*xlim, *ylim], aspect='auto', cmap=cmap, alpha=0.5)
-    plt.xlabel(str(wrd_idx))
+    wrd_idx_int = [int(i) for i in wrd_idx]
+    plt.xlabel(str(wrd_idx_int))
 
 def _get_results(target, names, lengths, c):
     return [np.loadtxt(target+"results/" + name + "_" + c + ".txt").reshape((-1, l)) for name, l in zip(names, lengths)]
@@ -101,7 +105,8 @@ wcolors = ListedColormap([cm.tab20(float(i)/word_num) for i in range(word_num)])
 for i, name in enumerate(tqdm(names)):
     plt.clf()
     _plot_discreate_sequence(_boundary(w_labels[i]), name, w_results[i], w_idxes[i], cmap=wcolors, label_cmap=cm.binary)
-    plt.savefig(result_target+"figures/" + name + "_wav_lab.eps")
-    plt.savefig(result_target+"figures/" + name + "_wav_lab.png")
+    plt.savefig(result_target+"figures/" + name + "_wav_lab.eps", bbox_inches="tight")
+    plt.savefig(result_target+"figures/" + name + "_wav_lab.png", bbox_inches="tight")
     plt.clf()
+
 print("Done!")
